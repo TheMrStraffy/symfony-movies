@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Movie: {{movie.title}}{% endblock %}
+
+{% block body %}
+  <div class="container h-100 m-auto flex justify-center align-items-center mt-10">
+
+    <div class="max-w-sm max-h-lg bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 ">
+      <div class="box-img ">
+      
+          <img class="rounded-t-lg h-full w-full" src="{{asset(movie.imagePath)}}" alt="" />
+      </div>
+      <div class="p-5">
+          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{movie.title}}</h5>
+          <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{movie.description}}</p>
+          <div class="flex justify-around">
+          <a href="/movies" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 ">
+              Go Back
+              
+          <a href="/movies/{{movie.id}}/edit" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-orange-400 rounded-lg hover:bg-orange-700 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+              Edit
+              <svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+          </a>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <style scoped>
+  .box-img{
+  height: 400px;
+  width: 100%;
+  }
+  .box-img img{
+  width:100%;
+  height:100%;
+  }
+
+  </style>
+{% endblock %}
